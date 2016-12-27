@@ -1,3 +1,4 @@
+
 Brain Academy. Python Course. Laboratory Work #2
 
 Laboratory Work #2.1.
@@ -11,6 +12,10 @@ Write the code to do following:
     6. Check is var2 is True
     7. Check is var2 is False
     8. Check result for var2 and var1
+    
+    Here is its solution code: 
+    
+```python  
 
 # 1. Create any variable with name var1
 print("\n\t1. Create any variable with name var1\n")
@@ -45,20 +50,25 @@ print("bool(not var2) -> ", bool(not var2))
 # 8. Check result for var2 and var1
 print("\n\t8. Check result for var2 and var1\n")
 print("bool(var2 == var1) -> ", bool(var2 == var1))
-
+```
 
 Brain Academy. Python Course. Laboratory Work #2
 
 Laboratory Work #2.2.
 
 Write the code to do following:
-Generate sequence 5 integers long from range(0, 100)
-Generate random float
-Print variables above
-Find max element from generated sequence
-Make a floor division between max element and generated float
-Find factorial of the result above
-Shorten the code as much as possible
+    1. Generate sequence 5 integers long from range(0, 100 )
+    2. Generate random float
+    3. Print variables above
+    4. Find max element from generated sequence
+    5. Make a floor division between max element and generated float
+    6. Find factorial of the result above
+    7. Shorten the code as much as possible
+  
+  Here is its solution code:
+  
+```python  
+
 # 1. Generate sequence 5 integers long from range(0, 100)
 print("\n\t1. Generate sequence 5 integers long from range(0, 100)\n")
 rList = random.sample(range(100), 5)
@@ -87,22 +97,27 @@ print("max_in_list // fRand = {}".format(max_in_list // fRand))
 print("\n\t1. Find factorial of the result above\n")
 print("math.factorial(max_in_list // fRand) = {}"
       .format(math.factorial(max_in_list // fRand)))
-      
+```    
       
 Brain Academy. Python Course. Laboratory Work #2
 
 Laboratory Work #2.3.
 
-Write the code to do following:
-Generate string with lowercase and uppercase alphabet plus numbers
-Print 1st symbol of string
-Print last symbol
-Print 3rd from start and 3rd from the end
-Slice first 8 symbols
-Print only symbols with index, which divides on 3 without remaining
-Print the symbol of the middle of the string text
-Reverse text using slice
-# 1. Generate string with lowercase and uppercase alphabet plus numbers
+    1. Write the code to do following:
+    2. Generate string with lowercase and uppercase alphabet plus numbers
+    3. Print 1st symbol of string
+    4. Print last symbol
+    5. Print 3rd from start and 3rd from the end
+    6. Slice first 8 symbols
+    7. Print only symbols with index, which divides on 3 without remaining
+    8. Print the symbol of the middle of the string text
+    9. Reverse text using slice
+    
+  Here is its solution code:
+  
+```python 
+
+#1. Generate string with lowercase and uppercase alphabet plus numbers
 print("\n\t1. Generate string with lowercase and uppercase alphabet plus numbers\n")
 s = ''
 start = random.randint(5, 10)
@@ -150,9 +165,9 @@ ch = ''
 for i in range(0, len(s)):
     ch += s[len(s) - 1 - i]
 print(ch)
+```
 
-
-Brain Academy. Python Course. Laboratory Work #2
+    Brain Academy. Python Course. Laboratory Work #2
 
 Laboratory Work #2.4.
 
@@ -166,7 +181,11 @@ Write the code to do following:
    7. Print only integer values from list
    8. Print only integer values from list * Reverse list using slice
    9. Convert base list into string
-   
+
+Here is its solution code:
+
+```python   
+
    import random
 
 # 1. Generate list with lowercase and uppercase alphabet plus numbers
@@ -222,7 +241,7 @@ print(s[::-1])
 print("\n\t9. Convert base list into string\n")
 s1 = str(s)
 print (s1)
-
+```
 
 Brain Academy. Python Course. Laboratory Work #2
 
@@ -236,7 +255,67 @@ Write the code to do following:
    5. Print sentence "The capital of COUNTRY is CAPITAL" for each record in capitals with the replace from dicts
    6. Merge sentences above together with one cycle
    7. Add to each value of first dict another two domains: COM and GOV
+
+Here is its solution code:
+
+```python 
    
+# 1. Create dict with 5 items, where keys will be country name and
+# value - domain name, i.e. {Ukraine:UA}
+print("\n\t1. Create dict with 5 items, where keys will be) "
+      " + (country name and value - domain name, i.e. {Ukraine:UA}\n")
+dic = {'Ukraine': 'UA',
+       'Poland': 'PL',
+       'Austria': 'AT',
+       'Cyprus': 'CY',
+       'Germany': 'DE'}
+print(dic)
+
+# 2. Create another dict with 5 items, where values of
+# countries will be keys, and values will be the capitals i.e. {'UA': 'Kiev'}
+print("\n\t2. Create another dict with 5 items, where values) + "
+      "(of countries will be keys, and values will be the capitals i.e. {'UA': 'Kiev'}\n")
+dic1 = {'UA': 'Kiev',
+        'PL':'Warsaw',
+        'AT':'Vein',
+        'CY': 'Nicosia',
+        'DE':'Berlin'}
+print(dic1)
+
+# 3. Add one more element to each dict above
+print("\n\t3. Add one more element to each dict above\n")
+dic.update({'Spain': 'SP'})
+dic1.update({'SP': 'Madrid'})
+print(dic)
+print(dic1)
+
+# 4. Print sentence "Domain for COUNTRY is DOMAIN." for each record
+# in country with the replace from dicts
+print("\n\t4. Print sentence \"Domain for COUNTRY is DOMAIN.\" for) + "
+      "(each record in countries with the replace from dicts\n")
+for key, value in dic.items():
+      print("Domain for {} is {}.".format(key, value))
+
+
+# 5. Print sentence "The capital of COUNTRY is CAPITAL" for each record
+# in capitals with the replace from dicts
+print("\n\t5. Print sentence \"The capital of COUNTRY is CAPITAL\"" +
+      " for each record in capitals with the replace from dicts\n")
+for key, value in dic.items():
+    print("The capital of {} is {}".format(key, value))
+    
+# 6. Merge sentences above together with one cycle
+print("\n\t6. Merge sentences above together with one cycle\n")
+for key, value in dic.items():
+    print("Domain for {} is {}.The capital is {}".format(key, value, dic1[value]))
+
+
+# 7. Add to each value of first dict another two domains: COM and GOV
+print("\n\t7. Add to each value of first dict another two domains: COM and GOV\n")
+for key, value in dic.items():
+    dic[key] = [value, 'COM', 'GOV']
+print(dic)
+```
    
  Brain Academy. Python Course. Laboratory Work #2
    
@@ -252,7 +331,11 @@ Write the code to do following:
   7. Reverse tuple using slice
   8. Convert both tuples into list
   
-  # 1. Generate two sets with not unique numbers and few symbols
+Here is its solution code: 
+ 
+```python  
+
+# 1. Generate two sets with not unique numbers and few symbols
 print("\n\t1. Generate two sets with not unique numbers and few symbols\n")
 s1 = {1, 2, 3, 'A'}
 s2 = {4, 5, 3, 'A'}
@@ -266,6 +349,7 @@ print(s1)
 print("\n\t3. Create tuple from intersection of first and second set\n")
 t1 = tuple(s1 & s2)
 print(t1)
+
 
 # 4. Create tuple from difference first and second set
 print("\n\t4. Create tuple from difference first and second set\n")
@@ -296,7 +380,7 @@ print(l4)
 print("\n\t8. Convert both tuples into list\n")
 l5 = list(t1 + t2)
 print(l5)
-
+```
 
 Brain Academy. Python Course. Laboratory Work #2
 
@@ -309,8 +393,12 @@ Write the code to do following:
   4. Read and print its contents
   5. Write into "Hello file world 'Hello file' string new value 'my' 'Hello my file'"
   6. Save changes without file object close
-  
-  # 1. Write a script that creates a new output file called my file.txt
+
+Here is its solution code:
+
+```python 
+
+# 1. Write a script that creates a new output file called my file.txt
 print("\n\t1. Write a script that creates a new output file called my file.txt\n")
 f = open('my_file.txt', 'w')
 
@@ -335,3 +423,4 @@ f.write('my file world!')
 # 6. Save changes without file object close
 print("\n\t6. Save changes without file object close\n")
 f.close()
+```

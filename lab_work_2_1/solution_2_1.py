@@ -10,6 +10,7 @@ Write the code to do following:
     8. Check result for var2 and var1
 '''
 
+
 # 1. Create any variable with name var1
 print("\n\t1. Create any variable with name var1\n")
 var1 = 15
